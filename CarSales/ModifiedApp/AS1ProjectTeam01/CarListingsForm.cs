@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Windows.Forms;
 
 
+
 namespace AS1ProjectTeam01
 {
-    public class EventHandler
-    {
+   
 
-    }
-  
     public partial class CarListingsForm : Form
     {
         //save xml to this list
@@ -20,14 +19,19 @@ namespace AS1ProjectTeam01
 
         // Init list string to hold list of selections
         private List<string> selectedYearList = new List<string>();
-        private List<string> selectedMakeList = new List<string>();
         private List<string> selectedColorList = new List<string>();
+        private List<string> selectedMakeList = new List<string>();
         private List<string> selectedDealerList = new List<string>();
 
         FileLoader carLoader = new FileLoader();
+        LINQHandler myLinq = new LINQHandler();
+
 
         //global LINQ 
         IEnumerable<Car> query = null;
+        
+
+
 
         public CarListingsForm()
         {
@@ -37,10 +41,10 @@ namespace AS1ProjectTeam01
             InitLoad();
 
             BringToTop();
-
+            
         }
 
-        
+
 
         public void Reset(object sender, EventArgs e)
         {
@@ -63,9 +67,9 @@ namespace AS1ProjectTeam01
 
         public void ResetToDefault()
         {
-          
+
             unRegisterEventHandler();
-            
+
             RegisterEventHandler();
 
             // Select all options AND update their relative List<string> 
@@ -105,30 +109,7 @@ namespace AS1ProjectTeam01
         }
 
 
-        public void SelectAllListboxes()
-        {
-            SelectAllOptionsInOneListBox(ListBoxMakes);
-            selectedMakeList = UpdateSelectItem(ListBoxMakes);
-
-            SelectAllOptionsInOneListBox(ListBoxColors);
-            selectedColorList = UpdateSelectItem(ListBoxColors);
-
-            SelectAllOptionsInOneListBox(ListBoxYears);
-            selectedYearList = UpdateSelectItem(ListBoxYears);
-
-            SelectAllOptionsInOneListBox(ListBoxDealers);
-            selectedDealerList = UpdateSelectItem(ListBoxDealers);
-        }
-
-        public void SelectAllOptionsInOneListBox(ListBox list)
-        {
-            for (int i = 0; i < list.Items.Count; i++)
-            {
-                list.SetSelected(i, true);
-            }
-        }
-
-        private void FilterHandler(object sender, EventArgs e)
+        public void FilterHandler(object sender, EventArgs e)
         {
             ListBox triggeredLists = sender as ListBox;
 
@@ -138,16 +119,16 @@ namespace AS1ProjectTeam01
                 switch (name)
                 {
                     case "ListBoxYears":
-                        selectedYearList = UpdateSelectItem(triggeredLists);
+                        selectedYearList = ListBoxControl.UpdateSelectItem(triggeredLists);
                         break;
                     case "ListBoxColors":
-                        selectedColorList = UpdateSelectItem(triggeredLists);
+                        selectedColorList = ListBoxControl.UpdateSelectItem(triggeredLists);
                         break;
                     case "ListBoxDealers":
-                        selectedDealerList = UpdateSelectItem(triggeredLists);
+                        selectedDealerList = ListBoxControl.UpdateSelectItem(triggeredLists);
                         break;
                     case "ListBoxMakes":
-                        selectedMakeList = UpdateSelectItem(triggeredLists);
+                        selectedMakeList = ListBoxControl.UpdateSelectItem(triggeredLists);
                         break;
 
                 }
@@ -156,16 +137,22 @@ namespace AS1ProjectTeam01
             populateLowerTable();
         }
 
-        public List<string> UpdateSelectItem(ListBox triggeredLists)
+        public void SelectAllListboxes()
         {
-            List<string> tempList = new List<String>();
-            for (int i = 0; i < triggeredLists.SelectedItems.Count; i++)
-            {
-                string temp = triggeredLists.SelectedItems[i].ToString();
-                tempList.Add(temp);
-            }
-            return tempList;
+            ListBoxControl.SelectAllOptionsInOneListBox(ListBoxMakes);
+            selectedMakeList = ListBoxControl.UpdateSelectItem(ListBoxMakes);
+
+            ListBoxControl.SelectAllOptionsInOneListBox(ListBoxColors);
+            selectedColorList = ListBoxControl.UpdateSelectItem(ListBoxColors);
+
+            ListBoxControl.SelectAllOptionsInOneListBox(ListBoxYears);
+            selectedYearList = ListBoxControl.UpdateSelectItem(ListBoxYears);
+
+            ListBoxControl.SelectAllOptionsInOneListBox(ListBoxDealers);
+            selectedDealerList = ListBoxControl.UpdateSelectItem(ListBoxDealers);
         }
+
+     
 
         public void populateLowerTable()
         {
@@ -200,12 +187,13 @@ namespace AS1ProjectTeam01
                 }
 
             }
-            
-            
-            ApplyDataToTable(CreateDataTable(query), dataSelectedCars);
 
 
-            CalculateSelectedDataList();
+            PrepareTable.ApplyDataToTable(PrepareTable.CreateDataTable(query), dataSelectedCars);
+
+
+            Calculation.CalculateSelectedDataList(query, labelAverageSelected, labelCountSelected);
+            Calculation.CalculateSelectedDataList(listCars, labelAveragePriceAll, labelCountAll);
         }
 
         public bool TxtBoxValidation(CheckBox checkbox, TextBox minTxt, TextBox maxTxt)
@@ -265,17 +253,19 @@ namespace AS1ProjectTeam01
 
         public void InitLoad()
         {
-            carLoader.GetXmlCarListingsSerialize(ref listCars, ref query);
+            listCars = carLoader.OpenFile(listCars);
+            query = listCars;
 
 
             // Setting up and format UI
-            SetDataGridView(dataAllCars);
-            SetDataGridView(dataSelectedCars);
-            
-            ApplyDataToTable(CreateDataTable(listCars), dataAllCars);
-            ApplyDataToTable(CreateDataTable(query), dataSelectedCars);
+            PrepareTable.SetDataGridView(dataAllCars);
+            PrepareTable.SetDataGridView(dataSelectedCars);
 
-            ApplyDataToListBox();
+            PrepareTable.ApplyDataToTable(PrepareTable.CreateDataTable(listCars), dataAllCars);
+            PrepareTable.ApplyDataToTable(PrepareTable.CreateDataTable(query), dataSelectedCars);
+
+            myLinq.ApplyDataToListBox(listCars, ref ListBoxMakes, 
+                ref ListBoxColors, ref ListBoxYears, ref ListBoxDealers);
 
             SelectAllListboxes();
             
@@ -283,115 +273,14 @@ namespace AS1ProjectTeam01
 
             RegisterEventHandler();
 
+
             populateLowerTable();
             
         }
 
-        public void ApplyDataToListBox()
-        {
-            //select data from the listCars
-            var makesList = listCars
-                .GroupBy(car => car.Make)
-                .Select(car => car.First())
-                .OrderBy(car => car.Make)
-                .Select(car => car.Make.ToString());
-
-            ListBoxMakes.DataSource = makesList.ToList();
-
-            // Query Colors list
-            var colorsList = listCars
-                .GroupBy(car => car.Color)
-                .Select(car => car.First())
-                .OrderBy(car => car.Color)
-                .Select(car => car.Color.ToString());
-
-            ListBoxColors.DataSource = colorsList.ToList();
-         
-      
-            // Query Years list
-            var yearsList = listCars
-                .GroupBy(car => car.Year)
-                .Select(car => car.First())
-                .OrderBy(car => car.Year)
-                .Select(car => car.Year.ToString());
-            ListBoxYears.DataSource = yearsList.ToList();
-       
         
-            // Query Dealers list
-            var dealersList = listCars
-                .GroupBy(car => car.Dealer.ToString())
-                .Select(car => car.First())
-                .OrderBy(car => car.Dealer)
-                .Select(car => car.Dealer.ToString());
-            ListBoxDealers.DataSource = dealersList.ToList();
-
-            SelectAllListboxes();
-        }
 
 
-       
-
-        public void SetDataGridView(DataGridView gridView)
-        {
-            gridView.Columns.Clear(); // any columns created by the designer, get rid of them
-            gridView.ReadOnly = true; // no cell editing allowed
-            gridView.AllowUserToAddRows = false; // no rows can be added or deleted
-            gridView.AllowUserToDeleteRows = false;
-            gridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
-            gridView.RowHeadersVisible = false;
-            gridView.AutoSize = false; // don't autosize the cells
-                                       // right justify everything
-            gridView.ColumnHeadersDefaultCellStyle.Alignment =
-            DataGridViewContentAlignment.MiddleRight;
-            gridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-        }
-
-
-
-        public void CalculateSelectedDataList()
-        {
-            if (query.Count() > 0)
-            {
-                var average = query.Select(car => car.Price).Average();
-                labelAverageSelected.Text = average.ToString("C2");
-            }
-            else
-            {
-                labelAverageSelected.Text = 0.ToString("C2");
-            }
-            labelCountSelected.Text = query.Count().ToString();
-        }
-
-        
-        public static DataTable CreateDataTable<T>(IEnumerable<T> list)
-        {
-            Type type = typeof(T);
-            var properties = type.GetProperties();
-
-            DataTable dataTable = new DataTable();
-            foreach (PropertyInfo info in properties)
-            {
-                dataTable.Columns.Add(new DataColumn(info.Name, Nullable.GetUnderlyingType(info.PropertyType) ?? info.PropertyType));
-            }
-
-            foreach (T entity in list)
-            {
-                object[] values = new object[properties.Length];
-                for (int i = 0; i < properties.Length; i++)
-                {
-                    values[i] = properties[i].GetValue(entity);
-                }
-
-                dataTable.Rows.Add(values);
-            }
-
-            return dataTable;
-        }
-
-        public static void ApplyDataToTable(DataTable input, DataGridView tableToShow)
-        {
-            tableToShow.DataSource = input;
-            tableToShow.Columns["Price"].DefaultCellStyle.Format = "c";
-        }
+    
     }
 }

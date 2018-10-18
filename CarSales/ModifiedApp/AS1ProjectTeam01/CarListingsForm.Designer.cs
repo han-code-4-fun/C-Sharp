@@ -85,7 +85,7 @@ namespace AS1ProjectTeam01
             // 
             this.dataAllCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataAllCars.Location = new System.Drawing.Point(36, 90);
-            this.dataAllCars.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dataAllCars.Margin = new System.Windows.Forms.Padding(7);
             this.dataAllCars.Name = "dataAllCars";
             this.dataAllCars.RowTemplate.Height = 24;
             this.dataAllCars.Size = new System.Drawing.Size(1805, 382);
@@ -144,7 +144,7 @@ namespace AS1ProjectTeam01
             // resetButton
             // 
             this.resetButton.Location = new System.Drawing.Point(734, 571);
-            this.resetButton.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.resetButton.Margin = new System.Windows.Forms.Padding(7);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(318, 53);
             this.resetButton.TabIndex = 7;
@@ -156,8 +156,9 @@ namespace AS1ProjectTeam01
             this.ListBoxMakes.FormattingEnabled = true;
             this.ListBoxMakes.ItemHeight = 37;
             this.ListBoxMakes.Location = new System.Drawing.Point(36, 701);
-            this.ListBoxMakes.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ListBoxMakes.Margin = new System.Windows.Forms.Padding(7);
             this.ListBoxMakes.Name = "ListBoxMakes";
+            this.ListBoxMakes.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.ListBoxMakes.Size = new System.Drawing.Size(353, 300);
             this.ListBoxMakes.TabIndex = 8;
             // 
@@ -186,8 +187,9 @@ namespace AS1ProjectTeam01
             this.ListBoxYears.FormattingEnabled = true;
             this.ListBoxYears.ItemHeight = 37;
             this.ListBoxYears.Location = new System.Drawing.Point(556, 701);
-            this.ListBoxYears.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ListBoxYears.Margin = new System.Windows.Forms.Padding(7);
             this.ListBoxYears.Name = "ListBoxYears";
+            this.ListBoxYears.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.ListBoxYears.Size = new System.Drawing.Size(175, 300);
             this.ListBoxYears.TabIndex = 10;
             // 
@@ -206,8 +208,9 @@ namespace AS1ProjectTeam01
             this.ListBoxColors.FormattingEnabled = true;
             this.ListBoxColors.ItemHeight = 37;
             this.ListBoxColors.Location = new System.Drawing.Point(922, 701);
-            this.ListBoxColors.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ListBoxColors.Margin = new System.Windows.Forms.Padding(7);
             this.ListBoxColors.Name = "ListBoxColors";
+            this.ListBoxColors.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.ListBoxColors.Size = new System.Drawing.Size(263, 300);
             this.ListBoxColors.TabIndex = 12;
             // 
@@ -226,8 +229,9 @@ namespace AS1ProjectTeam01
             this.ListBoxDealers.FormattingEnabled = true;
             this.ListBoxDealers.ItemHeight = 37;
             this.ListBoxDealers.Location = new System.Drawing.Point(1451, 701);
-            this.ListBoxDealers.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ListBoxDealers.Margin = new System.Windows.Forms.Padding(7);
             this.ListBoxDealers.Name = "ListBoxDealers";
+            this.ListBoxDealers.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.ListBoxDealers.Size = new System.Drawing.Size(384, 300);
             this.ListBoxDealers.TabIndex = 14;
             // 
@@ -265,7 +269,7 @@ namespace AS1ProjectTeam01
             // txtMinPrice
             // 
             this.txtMinPrice.Location = new System.Drawing.Point(261, 1057);
-            this.txtMinPrice.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtMinPrice.Margin = new System.Windows.Forms.Padding(7);
             this.txtMinPrice.Name = "txtMinPrice";
             this.txtMinPrice.Size = new System.Drawing.Size(232, 44);
             this.txtMinPrice.TabIndex = 19;
@@ -273,7 +277,7 @@ namespace AS1ProjectTeam01
             // txtMaxPrice
             // 
             this.txtMaxPrice.Location = new System.Drawing.Point(261, 1128);
-            this.txtMaxPrice.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtMaxPrice.Margin = new System.Windows.Forms.Padding(7);
             this.txtMaxPrice.Name = "txtMaxPrice";
             this.txtMaxPrice.Size = new System.Drawing.Size(232, 44);
             this.txtMaxPrice.TabIndex = 20;
@@ -292,7 +296,7 @@ namespace AS1ProjectTeam01
             // txtMaxEngineSize
             // 
             this.txtMaxEngineSize.Location = new System.Drawing.Point(1316, 1126);
-            this.txtMaxEngineSize.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtMaxEngineSize.Margin = new System.Windows.Forms.Padding(7);
             this.txtMaxEngineSize.Name = "txtMaxEngineSize";
             this.txtMaxEngineSize.Size = new System.Drawing.Size(232, 44);
             this.txtMaxEngineSize.TabIndex = 25;
@@ -300,7 +304,7 @@ namespace AS1ProjectTeam01
             // txtMinEngineSize
             // 
             this.txtMinEngineSize.Location = new System.Drawing.Point(1316, 1054);
-            this.txtMinEngineSize.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtMinEngineSize.Margin = new System.Windows.Forms.Padding(7);
             this.txtMinEngineSize.Name = "txtMinEngineSize";
             this.txtMinEngineSize.Size = new System.Drawing.Size(232, 44);
             this.txtMinEngineSize.TabIndex = 24;
@@ -329,7 +333,7 @@ namespace AS1ProjectTeam01
             // 
             this.searchPrice.AutoSize = true;
             this.searchPrice.Location = new System.Drawing.Point(261, 1193);
-            this.searchPrice.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.searchPrice.Margin = new System.Windows.Forms.Padding(7);
             this.searchPrice.Name = "searchPrice";
             this.searchPrice.Size = new System.Drawing.Size(290, 41);
             this.searchPrice.TabIndex = 26;
@@ -340,7 +344,7 @@ namespace AS1ProjectTeam01
             // 
             this.searchEngineSize.AutoSize = true;
             this.searchEngineSize.Location = new System.Drawing.Point(1240, 1191);
-            this.searchEngineSize.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.searchEngineSize.Margin = new System.Windows.Forms.Padding(7);
             this.searchEngineSize.Name = "searchEngineSize";
             this.searchEngineSize.Size = new System.Drawing.Size(387, 41);
             this.searchEngineSize.TabIndex = 27;
@@ -389,7 +393,7 @@ namespace AS1ProjectTeam01
             // 
             this.dataSelectedCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataSelectedCars.Location = new System.Drawing.Point(45, 1325);
-            this.dataSelectedCars.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dataSelectedCars.Margin = new System.Windows.Forms.Padding(7);
             this.dataSelectedCars.Name = "dataSelectedCars";
             this.dataSelectedCars.RowTemplate.Height = 24;
             this.dataSelectedCars.Size = new System.Drawing.Size(1805, 382);
@@ -446,7 +450,7 @@ namespace AS1ProjectTeam01
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataAllCars);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "CarListingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Assignment 1 - Car Listings - ProjectTeam 01 ";
@@ -454,13 +458,6 @@ namespace AS1ProjectTeam01
             ((System.ComponentModel.ISupportInitialize)(this.dataSelectedCars)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            ListBoxYears.SelectionMode = SelectionMode.MultiExtended;
-            ListBoxColors.SelectionMode = SelectionMode.MultiExtended;
-            ListBoxMakes.SelectionMode = SelectionMode.MultiExtended;
-            ListBoxDealers.SelectionMode = SelectionMode.MultiExtended;
-
-
 
         }
 
