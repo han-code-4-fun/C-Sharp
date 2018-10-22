@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+
 
 namespace AS1Project
 {
@@ -46,7 +49,7 @@ namespace AS1Project
 
 
 
-            //from Michael,
+            //from Instructor,
 
             //carListings = GetListFromXML<Car>();//for generic method
             //if(carListings ==null )
@@ -58,7 +61,7 @@ namespace AS1Project
 
 
 
-        //from Michael
+        //from Instructor
         //public List<T> GetListFromXML<T>()
         //{
         //    List<T> genericList;
@@ -104,7 +107,7 @@ namespace AS1Project
         //        },
         //         new DataGridViewTextBoxColumn(){ Name = "Dealer", Width = 100,},
 
-        //       //Michael use this method for assignemnt solution
+        //       //Instructor use this method for assignemnt solution
 
 
 
@@ -416,10 +419,44 @@ namespace AS1Project
         /// <summary>
         // Wrapper method for all the initial load
         /// </summary>
+        /// 
+        public void GetCar(string filter, List<Car> listCars)
+        {
+            
+            var makesList = listCars
+                .GroupBy(car => car.Color == filter)
+                .Select(g => g.First())
+                .Select(c => c.Color.ToString());
+
+
+            makesListBox.DataSource = makesList.ToList();
+
+            //PropertyInfo prop = typeof(Car).GetProperties()
+            //                                  .Where(x => x.Name == filter)
+            //                                  .First();
+            //IEnumrable<car>
+            //var grouping = from car in listCars
+            //               group car by new { filter = prop.GetValue(car) } into _group
+            //               select new
+            //               {
+
+            //                   Filter = _group.Key.filter,
+
+            //               };
+
+
+
+            //makesListBox.DataSource = grouping.ToList();
+
+
+
+
+        }
         public void InitLoad()
         {
             // Load XML file into a list
             listCars = GetXmlCarListingsSerialize();
+            
 
             // Setting up and format UI
             SetDataGridView(dataAllCars);
@@ -443,17 +480,23 @@ namespace AS1Project
             // Display selected cars
             populateLowerTable();
 
-      //Michael      var makeList = listCars.Select(g => g.Key);
-                
+            //Instructor      var makeList = listCars.Select(g => g.Key);
+
 
 
             // Query Makes list
-            var makesList = listCars
-                .GroupBy(car => car.Make)
-                .Select(g => g.First())
-                .Select(c => c.Make.ToString());
-            // Assign data to list box
-            makesListBox.DataSource = makesList.ToList();
+            //var makesList = listCars
+            //    .GroupBy(car => car.Make)
+            //    .Select(g => g.First())
+            //    .Select(c => c.Make.ToString());
+            //// Assign data to list box
+
+            //makesListBox.DataSource = makesList.ToList();
+
+
+            GetCar("Make", listCars);
+
+
             // Query Colors list
             var colorsList = listCars
                 .GroupBy(car => car.Color)
@@ -462,6 +505,8 @@ namespace AS1Project
                 .Select(c => c.Color.ToString());
             // Assign data to list box
             colorsListBox.DataSource = colorsList.ToList();
+
+
             // Query Years list
             var yearsList = listCars
                 .GroupBy(car => car.Year)
@@ -484,6 +529,9 @@ namespace AS1Project
             // Calculate all Cars
             var count = listCars.Count();
             var average = listCars.Select(car => car.Price).Average();
+
+            Console.WriteLine(listCars[3].Make.GetType());
+            
             // Append string to labels
             lblCountAll.Text = count.ToString();
             lblAveragePriceAll.Text = Convert.ToDecimal(average).ToString("C");

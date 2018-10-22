@@ -1,9 +1,0 @@
-E:\GitHub\ForGit\AS1ProjectTeam01\bin\Debug\AS1ProjectTeam01.exe.config
-E:\GitHub\ForGit\AS1ProjectTeam01\bin\Debug\AS1ProjectTeam01.exe
-E:\GitHub\ForGit\AS1ProjectTeam01\bin\Debug\AS1ProjectTeam01.pdb
-E:\GitHub\ForGit\AS1ProjectTeam01\obj\Debug\AS1Project.EventHandler.resources
-E:\GitHub\ForGit\AS1ProjectTeam01\obj\Debug\AS1ProjectTeam01.Properties.Resources.resources
-E:\GitHub\ForGit\AS1ProjectTeam01\obj\Debug\AS1Project.csproj.GenerateResource.Cache
-E:\GitHub\ForGit\AS1ProjectTeam01\obj\Debug\AS1Project.csproj.CoreCompileInputs.cache
-E:\GitHub\ForGit\AS1ProjectTeam01\obj\Debug\AS1ProjectTeam01.exe
-E:\GitHub\ForGit\AS1ProjectTeam01\obj\Debug\AS1ProjectTeam01.pdb

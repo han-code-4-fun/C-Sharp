@@ -15,6 +15,7 @@ namespace AS1Project
         public decimal EngineSize { get; set; } // in litres
         public int Price { get; set; } // in dollars
         public string Dealer { get; set; } // dealer selling the car
+        public string Filter { get; set; }
         public Car() { }
     }
 }
