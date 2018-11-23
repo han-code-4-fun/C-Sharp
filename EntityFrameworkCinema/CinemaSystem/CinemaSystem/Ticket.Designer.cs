@@ -38,11 +38,17 @@
             this.dataGridViewMovie = new System.Windows.Forms.DataGridView();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
-            this.buttonToSnack = new System.Windows.Forms.Button();
             this.buttonBuy = new System.Windows.Forms.Button();
             this.dataGridViewTicketCheckOut = new System.Windows.Forms.DataGridView();
-            this.textBoxTotalPrice = new System.Windows.Forms.TextBox();
+            this.textBoxMoviePrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxSnackPrice = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxTotalPrice = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTicketCheckOut)).BeginInit();
@@ -90,7 +96,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(798, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(721, 274);
+            this.groupBox1.Size = new System.Drawing.Size(653, 210);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Info.";
@@ -114,7 +120,8 @@
             // dataGridViewMovie
             // 
             this.dataGridViewMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMovie.Location = new System.Drawing.Point(90, 337);
+            this.dataGridViewMovie.Location = new System.Drawing.Point(75, 264);
+            this.dataGridViewMovie.MultiSelect = false;
             this.dataGridViewMovie.Name = "dataGridViewMovie";
             this.dataGridViewMovie.RowTemplate.Height = 46;
             this.dataGridViewMovie.Size = new System.Drawing.Size(1454, 400);
@@ -122,7 +129,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(90, 777);
+            this.buttonAdd.Location = new System.Drawing.Point(528, 692);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(104, 80);
             this.buttonAdd.TabIndex = 6;
@@ -131,25 +138,16 @@
             // 
             // buttonRemove
             // 
-            this.buttonRemove.Location = new System.Drawing.Point(219, 777);
+            this.buttonRemove.Location = new System.Drawing.Point(876, 692);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(104, 80);
             this.buttonRemove.TabIndex = 7;
             this.buttonRemove.Text = "-";
             this.buttonRemove.UseVisualStyleBackColor = true;
             // 
-            // buttonToSnack
-            // 
-            this.buttonToSnack.Location = new System.Drawing.Point(1205, 777);
-            this.buttonToSnack.Name = "buttonToSnack";
-            this.buttonToSnack.Size = new System.Drawing.Size(287, 80);
-            this.buttonToSnack.TabIndex = 8;
-            this.buttonToSnack.Text = "Snacks?";
-            this.buttonToSnack.UseVisualStyleBackColor = true;
-            // 
             // buttonBuy
             // 
-            this.buttonBuy.Location = new System.Drawing.Point(1205, 1201);
+            this.buttonBuy.Location = new System.Drawing.Point(693, 1203);
             this.buttonBuy.Name = "buttonBuy";
             this.buttonBuy.Size = new System.Drawing.Size(287, 80);
             this.buttonBuy.TabIndex = 9;
@@ -159,39 +157,107 @@
             // dataGridViewTicketCheckOut
             // 
             this.dataGridViewTicketCheckOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTicketCheckOut.Location = new System.Drawing.Point(90, 901);
+            this.dataGridViewTicketCheckOut.Location = new System.Drawing.Point(95, 797);
             this.dataGridViewTicketCheckOut.Name = "dataGridViewTicketCheckOut";
             this.dataGridViewTicketCheckOut.RowTemplate.Height = 46;
-            this.dataGridViewTicketCheckOut.Size = new System.Drawing.Size(1063, 366);
+            this.dataGridViewTicketCheckOut.Size = new System.Drawing.Size(955, 366);
             this.dataGridViewTicketCheckOut.TabIndex = 10;
             // 
-            // textBoxTotalPrice
+            // textBoxMoviePrice
             // 
-            this.textBoxTotalPrice.Location = new System.Drawing.Point(1205, 1032);
-            this.textBoxTotalPrice.Name = "textBoxTotalPrice";
-            this.textBoxTotalPrice.ReadOnly = true;
-            this.textBoxTotalPrice.Size = new System.Drawing.Size(287, 44);
-            this.textBoxTotalPrice.TabIndex = 16;
+            this.textBoxMoviePrice.Location = new System.Drawing.Point(1137, 742);
+            this.textBoxMoviePrice.Name = "textBoxMoviePrice";
+            this.textBoxMoviePrice.ReadOnly = true;
+            this.textBoxMoviePrice.Size = new System.Drawing.Size(287, 44);
+            this.textBoxMoviePrice.TabIndex = 16;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1198, 955);
+            this.label4.Location = new System.Drawing.Point(1130, 688);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(179, 37);
+            this.label4.Size = new System.Drawing.Size(236, 37);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Total Price:";
+            this.label4.Text = "Subtotal Movie:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(672, 692);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(158, 80);
+            this.textBox1.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(85, 708);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(426, 55);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Number of Tickets:";
+            // 
+            // textBoxSnackPrice
+            // 
+            this.textBoxSnackPrice.Location = new System.Drawing.Point(1137, 1052);
+            this.textBoxSnackPrice.Name = "textBoxSnackPrice";
+            this.textBoxSnackPrice.ReadOnly = true;
+            this.textBoxSnackPrice.Size = new System.Drawing.Size(287, 44);
+            this.textBoxSnackPrice.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1130, 998);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(242, 37);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Subtotal Snack:";
+            // 
+            // textBoxTotalPrice
+            // 
+            this.textBoxTotalPrice.Location = new System.Drawing.Point(1137, 1239);
+            this.textBoxTotalPrice.Name = "textBoxTotalPrice";
+            this.textBoxTotalPrice.ReadOnly = true;
+            this.textBoxTotalPrice.Size = new System.Drawing.Size(287, 44);
+            this.textBoxTotalPrice.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1130, 1185);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(179, 37);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Total Price:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(75, 163);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(194, 69);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Seat";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1767, 1304);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxTotalPrice);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBoxSnackPrice);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxMoviePrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridViewTicketCheckOut);
             this.Controls.Add(this.buttonBuy);
-            this.Controls.Add(this.buttonToSnack);
             this.Controls.Add(this.buttonRemove);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.dataGridViewMovie);
@@ -221,10 +287,16 @@
         private System.Windows.Forms.DataGridView dataGridViewMovie;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonRemove;
-        private System.Windows.Forms.Button buttonToSnack;
         private System.Windows.Forms.Button buttonBuy;
         private System.Windows.Forms.DataGridView dataGridViewTicketCheckOut;
-        private System.Windows.Forms.TextBox textBoxTotalPrice;
+        private System.Windows.Forms.TextBox textBoxMoviePrice;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxSnackPrice;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxTotalPrice;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

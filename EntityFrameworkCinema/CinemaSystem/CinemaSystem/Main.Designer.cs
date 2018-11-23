@@ -30,14 +30,17 @@
         {
             this.buttonRegistration = new System.Windows.Forms.Button();
             this.buttonTicket = new System.Windows.Forms.Button();
-            this.buttonSnack = new System.Windows.Forms.Button();
             this.buttonAddMovie = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonBackup = new System.Windows.Forms.Button();
+            this.buttonSwitch = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonRegistration
             // 
-            this.buttonRegistration.Location = new System.Drawing.Point(238, 457);
+            this.buttonRegistration.Location = new System.Drawing.Point(602, 114);
             this.buttonRegistration.Name = "buttonRegistration";
             this.buttonRegistration.Size = new System.Drawing.Size(258, 158);
             this.buttonRegistration.TabIndex = 0;
@@ -53,18 +56,9 @@
             this.buttonTicket.Text = "Ticket";
             this.buttonTicket.UseVisualStyleBackColor = true;
             // 
-            // buttonSnack
-            // 
-            this.buttonSnack.Location = new System.Drawing.Point(602, 114);
-            this.buttonSnack.Name = "buttonSnack";
-            this.buttonSnack.Size = new System.Drawing.Size(258, 158);
-            this.buttonSnack.TabIndex = 2;
-            this.buttonSnack.Text = "Snack";
-            this.buttonSnack.UseVisualStyleBackColor = true;
-            // 
             // buttonAddMovie
             // 
-            this.buttonAddMovie.Location = new System.Drawing.Point(602, 457);
+            this.buttonAddMovie.Location = new System.Drawing.Point(238, 396);
             this.buttonAddMovie.Name = "buttonAddMovie";
             this.buttonAddMovie.Size = new System.Drawing.Size(258, 158);
             this.buttonAddMovie.TabIndex = 3;
@@ -73,25 +67,55 @@
             // 
             // buttonReport
             // 
-            this.buttonReport.Location = new System.Drawing.Point(238, 763);
+            this.buttonReport.Location = new System.Drawing.Point(28, 52);
             this.buttonReport.Name = "buttonReport";
-            this.buttonReport.Size = new System.Drawing.Size(622, 158);
+            this.buttonReport.Size = new System.Drawing.Size(258, 158);
             this.buttonReport.TabIndex = 4;
             this.buttonReport.Text = "Report";
             this.buttonReport.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonBackup);
+            this.groupBox1.Controls.Add(this.buttonReport);
+            this.groupBox1.Location = new System.Drawing.Point(238, 681);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(622, 238);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Adminstrator Function";
+            // 
+            // buttonBackup
+            // 
+            this.buttonBackup.Location = new System.Drawing.Point(358, 52);
+            this.buttonBackup.Name = "buttonBackup";
+            this.buttonBackup.Size = new System.Drawing.Size(258, 158);
+            this.buttonBackup.TabIndex = 5;
+            this.buttonBackup.Text = "Back Up";
+            this.buttonBackup.UseVisualStyleBackColor = true;
+            // 
+            // buttonSwitch
+            // 
+            this.buttonSwitch.Location = new System.Drawing.Point(602, 396);
+            this.buttonSwitch.Name = "buttonSwitch";
+            this.buttonSwitch.Size = new System.Drawing.Size(252, 158);
+            this.buttonSwitch.TabIndex = 6;
+            this.buttonSwitch.Text = "Switch to Administrator";
+            this.buttonSwitch.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 1304);
-            this.Controls.Add(this.buttonReport);
+            this.ClientSize = new System.Drawing.Size(1117, 1122);
+            this.Controls.Add(this.buttonSwitch);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonAddMovie);
-            this.Controls.Add(this.buttonSnack);
             this.Controls.Add(this.buttonTicket);
             this.Controls.Add(this.buttonRegistration);
             this.Name = "Main";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -100,9 +124,11 @@
 
         private System.Windows.Forms.Button buttonRegistration;
         private System.Windows.Forms.Button buttonTicket;
-        private System.Windows.Forms.Button buttonSnack;
         private System.Windows.Forms.Button buttonAddMovie;
         private System.Windows.Forms.Button buttonReport;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button buttonBackup;
+        private System.Windows.Forms.Button buttonSwitch;
     }
 }
 

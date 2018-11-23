@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CinemaSystem
 {
-    public partial class Snack : Form
+    public partial class MemberRegistration : Form
     {
-        public Snack()
+        public MemberRegistration()
         {
             InitializeComponent();
         }
