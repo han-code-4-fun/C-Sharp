@@ -160,7 +160,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddMovie";
-            this.Text = "AddMovie";
+            this.Text = "*";
             this.ResumeLayout(false);
             this.PerformLayout();
 
