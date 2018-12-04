@@ -21,6 +21,10 @@ namespace CinemaSystem.EF_Class
         [StringLength(30)]
         public string HallName { get; set; }
 
+        public int MaxRow { get; set; }
+
+        public int MaxColume { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schedule> Schedules { get; set; }
     }

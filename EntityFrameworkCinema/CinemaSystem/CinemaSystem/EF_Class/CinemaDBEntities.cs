@@ -5,14 +5,15 @@ namespace CinemaSystem.EF_Class
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class CinemaDBEntity : DbContext
+    public partial class CinemaDBEntities : DbContext
     {
-        public CinemaDBEntity()
-            : base("name=CinemaDBEntity")
+        public CinemaDBEntities()
+            : base("name=CinemaDBEntities1")
         {
         }
 
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
+        public virtual DbSet<BookedSeat> BookedSeats { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Hall> Halls { get; set; }
         public virtual DbSet<Movy> Movies { get; set; }
@@ -64,6 +65,10 @@ namespace CinemaSystem.EF_Class
             modelBuilder.Entity<Order>()
                 .Property(e => e.OrderTotal)
                 .HasPrecision(19, 4);
+
+            modelBuilder.Entity<Order>()
+                .Property(e => e.SeatsBooked)
+                .IsUnicode(false);
 
             modelBuilder.Entity<OrdersSnack>()
                 .Property(e => e.UnitPrice)
