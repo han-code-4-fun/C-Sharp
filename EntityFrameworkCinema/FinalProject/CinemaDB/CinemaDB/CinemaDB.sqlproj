@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <ValidateCasingOnIdentifiers>False</ValidateCasingOnIdentifiers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -59,6 +60,7 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD:EntityFrameworkCinema/FinalProject/CinemaDB/CinemaDB/CinemaDB.sqlproj
     <Build Include="Customers.sql" />
     <Build Include="Halls.sql" />
     <Build Include="Movies.sql" />
@@ -70,8 +72,21 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="SeedData.sql" />
+=======
+    <Build Include="dbo\Tables\Customers_2.sql" />
+    <Build Include="dbo\Tables\Movies_2.sql" />
+    <Build Include="dbo\Tables\Orders_2.sql" />
+    <Build Include="dbo\Tables\OrdersSnacks_2.sql" />
+    <Build Include="dbo\Tables\Schedules_2.sql" />
+    <Build Include="dbo\Tables\Snacks_2.sql" />
+    <Build Include="dbo\Tables\Hall.sql" />
+    <Build Include="dbo\Tables\BookedSeats.sql" />
+>>>>>>> 614aecc384936d67d4c4d303036d219fdee8b36e:EntityFrameworkCinema/CinemaDB/CinemaDB/CinemaDB.sqlproj
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="CinemaDB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="dbo\seed.sql" />
   </ItemGroup>
 </Project>

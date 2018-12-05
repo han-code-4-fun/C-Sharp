@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaSystem", "CinemaSystem\CinemaSystem.csproj", "{CAEE0F59-6ABF-4499-8FD2-521170C26906}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CinemaDB", "..\CinemaDB\CinemaDB\CinemaDB.sqlproj", "{292AF5A9-A24C-4649-9116-44FE264A0F4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{CAEE0F59-6ABF-4499-8FD2-521170C26906}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAEE0F59-6ABF-4499-8FD2-521170C26906}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAEE0F59-6ABF-4499-8FD2-521170C26906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292AF5A9-A24C-4649-9116-44FE264A0F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{292AF5A9-A24C-4649-9116-44FE264A0F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{292AF5A9-A24C-4649-9116-44FE264A0F4D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{292AF5A9-A24C-4649-9116-44FE264A0F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{292AF5A9-A24C-4649-9116-44FE264A0F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292AF5A9-A24C-4649-9116-44FE264A0F4D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -61,7 +61,12 @@
     <Compile Include="AddMovie.Designer.cs">
       <DependentUpon>AddMovie.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD:EntityFrameworkCinema/FinalProject/CinemaSystem/CinemaSystem/CinemaSystem.csproj
     <Compile Include="EF_Class\CinemaEntities.cs" />
+=======
+    <Compile Include="EF_Class\BookedSeat.cs" />
+    <Compile Include="EF_Class\CinemaDBEntities.cs" />
+>>>>>>> 614aecc384936d67d4c4d303036d219fdee8b36e:EntityFrameworkCinema/CinemaSystem/CinemaSystem/CinemaSystem.csproj
     <Compile Include="EF_Class\Customer.cs" />
     <Compile Include="EF_Class\C__RefactorLog.cs" />
     <Compile Include="EF_Class\Hall.cs" />
