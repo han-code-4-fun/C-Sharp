@@ -48,14 +48,14 @@ INSERT INTO [dbo].[Halls] ([HallId], [HallName], [NMaxColum], [NMaxRow]) VALUES 
 SET IDENTITY_INSERT [dbo].[Halls] OFF
 go
 
-INSERT INTO [dbo].[Movies] ([Name], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Mission Impossible 6',
-N'Another Tom Cruise action movie',120,40)
-INSERT INTO [dbo].[Movies] ([Name], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Thor',
-N'Marvel studio proudly present',140,43)
-INSERT INTO [dbo].[Movies] ([Name], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Kill Bill',
-N'Famour action movie',114,39)
-INSERT INTO [dbo].[Movies] ([Name], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Venom',
-N'Venom from Marvel Universe',150,49)
+INSERT INTO [dbo].[Movies] ([Name],[Director], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Mission Impossible 6',
+N'David',N'Another Tom Cruise action movie',120,40)
+INSERT INTO [dbo].[Movies] ([Name], [Director],[Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Thor',
+N'James',N'Marvel studio proudly present',140,43)
+INSERT INTO [dbo].[Movies] ([Name],[Director], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Kill Bill',
+N'Frank',N'Famour action movie',114,39)
+INSERT INTO [dbo].[Movies] ([Name],[Director], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Venom',
+N'Eric',N'Venom from Marvel Universe',150,49)
 go
 
 INSERT INTO [dbo].[Snacks]([Name], [Price]) VALUES (N'Pepsi 500ml',2.0)
