@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[SeatsOrders]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Row] INT NULL, 
     [Column] INT NULL, 
     [OrderId] INT NULL,

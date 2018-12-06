@@ -61,7 +61,6 @@
     <Compile Include="AddMovie.Designer.cs">
       <DependentUpon>AddMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="EF_Class\BookedSeat.cs" />
     <Compile Include="EF_Class\CinemaEntities.cs" />
     <Compile Include="EF_Class\Customer.cs" />
     <Compile Include="EF_Class\C__RefactorLog.cs" />

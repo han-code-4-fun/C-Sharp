@@ -19,12 +19,13 @@ namespace CinemaSystem
         List<Ticket.Seat> selectedSeats;
         public Seats(CinemaEntities cinemaContext, Schedule schedule, List<Ticket.Seat> seats)
         {
+            InitializeComponent();
             this.context = cinemaContext;
             this.schedule = schedule;
             this.selectedSeats = seats;
             this.Load += SeatsForm_Load;
-            // buttonConfirm.Click += ConfirmSeats_Click;
-            InitializeComponent();
+            buttonConfirm.Click += ConfirmSeats_Click;
+
         }
         private void SeatsForm_Load(object sender, EventArgs e)
         {
@@ -51,8 +52,25 @@ namespace CinemaSystem
                 newButton.Click += Seat_Click;
                 seats.Add(newButton);
                 this.Controls.Add(newButton);
-                
-            // TODO: Check if seats is selected
+            }
+
+            // Check for not available seats
+            var notAvailableSeats = context.SeatsOrders.Where(s => s.Order.Schedule.ScheduleId == schedule.ScheduleId).ToList();
+            foreach(SeatsOrder seatOrder in notAvailableSeats)
+            {
+                Ticket.Seat seat = new Ticket.Seat
+                {
+                    X = (int) seatOrder.Column,
+                    Y = (int) seatOrder.Row,
+                };
+                int index = ConvertPositionToIndex(seat);
+                seats[index - 1].BackColor = Color.DarkGray;
+            }
+            // Check if seats is selected
+            foreach (Ticket.Seat seat in selectedSeats)
+            {
+                int index = ConvertPositionToIndex(seat);
+                seats[index -1].BackColor = Color.Red;
             }
         }
 
@@ -64,7 +82,6 @@ namespace CinemaSystem
                 Ticket.Seat position = CalculatePosition(Convert.ToInt32(button.Text));
                 selectedSeats.RemoveAll(s => (s.X == position.X && s.Y == position.Y));
                 button.BackColor = DefaultBackColor;
-                MessageBox.Show(selectedSeats.Count.ToString());
             } else if(button.BackColor == DefaultBackColor)
             {
                 selectedSeats.Add(CalculatePosition(Convert.ToInt32(button.Text)));
@@ -73,7 +90,11 @@ namespace CinemaSystem
         }
         private void ConfirmSeats_Click(object sender, EventArgs e)
         {
-            // TODO: Check if at least one seat selected
+            if(selectedSeats.Count == 0)
+            {
+                MessageBox.Show("Please select at least one seat");
+                return;
+            }
             this.DialogResult = DialogResult.OK;
             Close();
         }
@@ -96,8 +117,15 @@ namespace CinemaSystem
             if (index % maxColumn == 0) seat.X = maxColumn;
             else seat.X = index % maxColumn;
             // Calculate Y
-            seat.Y = (index / maxColumn) + 1;
+            if (index % maxColumn == 0) seat.Y = index / maxColumn;
+            else seat.Y = (index / maxColumn) +1 ;
             return seat;
+        }
+        private int ConvertPositionToIndex(Ticket.Seat seat)
+        {
+            int maxColumn = schedule.Hall.NMaxColum;
+            int index = ((seat.Y-1) * maxColumn) + seat.X;
+            return index;
         }
     }
 }

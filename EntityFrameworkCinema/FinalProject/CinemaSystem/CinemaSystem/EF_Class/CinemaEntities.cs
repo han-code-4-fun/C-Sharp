@@ -10,6 +10,7 @@ namespace CinemaSystem.EF_Class
         public CinemaEntities()
             : base("name=CinemaConnection")
         {
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
