@@ -1,0 +1,18 @@
+E:\GitHub\C-Sharp\EntityFrameworkCinema\CinemaDB\CinemaDB\bin\Debug\CinemaDB.dacpac
+E:\GitHub\C-Sharp\EntityFrameworkCinema\CinemaDB\CinemaDB\bin\Debug\CinemaDB.dll
+E:\GitHub\C-Sharp\EntityFrameworkCinema\CinemaDB\CinemaDB\bin\Debug\CinemaDB.pdb
+E:\GitHub\C-Sharp\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\CinemaDB.dll
+E:\GitHub\C-Sharp\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\CinemaDB.pdb
+C:\Users\Alecn\OneDrive - Douglas College\School\第四学期\CSIS3540_001\Assignments\TermProject\EntityFrameworkCinema\CinemaDB\CinemaDB\bin\Debug\CinemaDB.dacpac
+C:\Users\Alecn\OneDrive - Douglas College\School\第四学期\CSIS3540_001\Assignments\TermProject\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\CinemaDB.dll
+C:\Users\Alecn\OneDrive - Douglas College\School\第四学期\CSIS3540_001\Assignments\TermProject\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\CinemaDB.pdb
+C:\Users\Alecn\OneDrive - Douglas College\School\第四学期\CSIS3540_001\Assignments\TermProject\EntityFrameworkCinema\CinemaDB\CinemaDB\bin\Debug\CinemaDB.dll
+C:\Users\Alecn\OneDrive - Douglas College\School\第四学期\CSIS3540_001\Assignments\TermProject\EntityFrameworkCinema\CinemaDB\CinemaDB\bin\Debug\CinemaDB.pdb
+C:\Users\Alecn\OneDrive - Douglas College\School\第四学期\CSIS3540_001\Assignments\TermProject\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\Model.xml
+C:\Users\Alecn\OneDrive - Douglas College\School\第四学期\CSIS3540_001\Assignments\TermProject\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\refactor.xml
+C:\Users\Alecn\OneDrive - Douglas College\School\第四学期\CSIS3540_001\Assignments\TermProject\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\postdeploy.sql
+C:\Users\Alecn\OneDrive - Douglas College\School\第四学期\CSIS3540_001\Assignments\TermProject\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\predeploy.sql
+E:\GitHub\C-Sharp\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\Model.xml
+E:\GitHub\C-Sharp\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\refactor.xml
+E:\GitHub\C-Sharp\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\postdeploy.sql
+E:\GitHub\C-Sharp\EntityFrameworkCinema\CinemaDB\CinemaDB\obj\Debug\predeploy.sql
