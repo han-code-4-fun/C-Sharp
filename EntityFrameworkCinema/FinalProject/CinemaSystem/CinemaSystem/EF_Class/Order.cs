@@ -11,6 +11,7 @@ namespace CinemaSystem.EF_Class
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order()
         {
+            BookedSeats = new HashSet<BookedSeat>();
             OrdersSnacks = new HashSet<OrdersSnack>();
             SeatsOrders = new HashSet<SeatsOrder>();
         }
@@ -28,6 +29,9 @@ namespace CinemaSystem.EF_Class
         public DateTime? OrderDateTime { get; set; }
 
         public string TicketIdentifier { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BookedSeat> BookedSeats { get; set; }
 
         public virtual Customer Customer { get; set; }
 

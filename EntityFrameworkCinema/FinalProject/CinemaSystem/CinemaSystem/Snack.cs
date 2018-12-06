@@ -17,6 +17,7 @@ namespace CinemaSystem
         public Snack(CinemaEntities cinemaContext)
         {
             this.context = cinemaContext;
+
             InitializeComponent();
             this.Load += SnackForm_Load;
         }

@@ -89,6 +89,8 @@ namespace CinemaSystem
             try
             {
                 int temp = int.Parse(textBoxPhone.Text);
+
+
                 return true;
             }
             catch(FormatException e)
