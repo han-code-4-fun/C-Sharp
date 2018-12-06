@@ -19,6 +19,11 @@ namespace CinemaSystem
             this.context = cinemaContext;
 
             InitializeComponent();
+            this.Load += SnackForm_Load;
+        }
+        private void SnackForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
