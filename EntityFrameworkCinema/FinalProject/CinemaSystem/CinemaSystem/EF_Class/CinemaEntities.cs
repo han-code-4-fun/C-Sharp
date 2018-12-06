@@ -8,12 +8,13 @@ namespace CinemaSystem.EF_Class
     public partial class CinemaEntities : DbContext
     {
         public CinemaEntities()
-            : base("name=CinemaConnection")
+            : base("name=CinemaEntities1")
         {
             this.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
+        public virtual DbSet<BookedSeat> BookedSeats { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Hall> Halls { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }

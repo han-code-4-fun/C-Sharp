@@ -55,21 +55,17 @@ namespace CinemaSystem
                         context.Customers.Add(newCust);
 
                         context.SaveChanges();
-                    }else
-                    {
-                        MessageBox.Show("Please enter a valid email");
+                        clearTexboxes();
+                        MessageBox.Show("You have SUCCESSFULLY registered customer");
+
+
                     }
-  
                 }
-                
             }
             else
             {
                 MessageBox.Show("Please fill all textboxes");
             }
-
-           
-
         }
 
         private bool CheckEmpty()
@@ -88,7 +84,15 @@ namespace CinemaSystem
         {
             try
             {
-                int temp = int.Parse(textBoxPhone.Text);
+                if(textBoxPhone.Text.Length != 10)
+                {
+                    MessageBox.Show("Please enter 10 digits number");
+                    return false;
+                }else
+                {
+                    int temp = int.Parse(textBoxPhone.Text);
+                }
+
                 return true;
             }
             catch(FormatException e)
@@ -96,7 +100,6 @@ namespace CinemaSystem
                 MessageBox.Show("Please enter purely numbers");
                 return false;
             }
-                 
         }
 
         private bool CheckEmailFormat()
@@ -109,6 +112,7 @@ namespace CinemaSystem
             {
                 return true;
             }
+            MessageBox.Show("Please enter a valid email");
             return false;
         }
 
@@ -133,9 +137,14 @@ namespace CinemaSystem
             {
                 return true;
             }
-            
-            
-           
+        }
+
+        private void clearTexboxes()
+        {
+            textBoxFirstName.Text = "";
+            textBoxLastName.Text = "";
+            textBoxEmail.Text = "";
+            textBoxPhone.Text = "";
         }
 
     }

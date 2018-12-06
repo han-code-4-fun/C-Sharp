@@ -61,6 +61,13 @@
     <Compile Include="AddMovie.Designer.cs">
       <DependentUpon>AddMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPasswd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPasswd.Designer.cs">
+      <DependentUpon>AdminPasswd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EF_Class\BookedSeat.cs" />
     <Compile Include="EF_Class\CinemaEntities.cs" />
     <Compile Include="EF_Class\Customer.cs" />
     <Compile Include="EF_Class\C__RefactorLog.cs" />
@@ -111,6 +118,9 @@
     </Compile>
     <EmbeddedResource Include="AddMovie.resx">
       <DependentUpon>AddMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPasswd.resx">
+      <DependentUpon>AdminPasswd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

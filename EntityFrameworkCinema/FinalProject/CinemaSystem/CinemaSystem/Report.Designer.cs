@@ -62,6 +62,7 @@
             this.listBoxMovie.ItemHeight = 37;
             this.listBoxMovie.Location = new System.Drawing.Point(138, 147);
             this.listBoxMovie.Name = "listBoxMovie";
+            this.listBoxMovie.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.listBoxMovie.Size = new System.Drawing.Size(368, 300);
             this.listBoxMovie.TabIndex = 2;
             // 
@@ -73,6 +74,7 @@
             this.button7Days.TabIndex = 3;
             this.button7Days.Text = "7 Days";
             this.button7Days.UseVisualStyleBackColor = true;
+            this.button7Days.Click += new System.EventHandler(this.button7Days_Click);
             // 
             // button30Days
             // 
@@ -82,6 +84,7 @@
             this.button30Days.TabIndex = 4;
             this.button30Days.Text = "30 Days";
             this.button30Days.UseVisualStyleBackColor = true;
+            this.button30Days.Click += new System.EventHandler(this.button30Days_Click);
             // 
             // buttonAllTime
             // 
@@ -91,6 +94,7 @@
             this.buttonAllTime.TabIndex = 5;
             this.buttonAllTime.Text = "All Time";
             this.buttonAllTime.UseVisualStyleBackColor = true;
+            this.buttonAllTime.Click += new System.EventHandler(this.buttonAllTime_Click);
             // 
             // Report
             // 
