@@ -24,6 +24,7 @@ namespace CinemaSystem
             TicketForm_Load();
             seatsButton.Click += SeatsForm_Init;
             findCustomer.Click += FindCustomer_Click;
+            snackButton.Click += SnacksForm_Init;
         }
         private void TicketForm_Load()
         {
@@ -60,6 +61,15 @@ namespace CinemaSystem
                 currentSeats = seatsForm.GetSelectedSeats();
             }
         }
+        private void SnacksForm_Init(object sender, EventArgs e)
+        {
+            Snack snackForm = new Snack(context);
+            var result = snackForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+            }
+        }
         private void FindCustomer_Click(object sender, EventArgs e)
         {
             String phone = textBoxPhone.Text;
@@ -68,7 +78,6 @@ namespace CinemaSystem
             textBoxFirstName.Text = currentCustomer.FirstName;
             textBoxLastName.Text = currentCustomer.LastName;
         }
-
 
         private class ListScheduleSelection
         {

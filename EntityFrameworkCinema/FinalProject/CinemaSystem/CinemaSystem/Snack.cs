@@ -14,11 +14,15 @@ namespace CinemaSystem
     public partial class Snack : Form
     {
         CinemaEntities context;
-
         public Snack(CinemaEntities cinemaContext)
         {
             this.context = cinemaContext;
             InitializeComponent();
+            this.Load += SnackForm_Load;
+        }
+        private void SnackForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
