@@ -87,3 +87,54 @@ INSERT INTO [dbo].[Schedules]([HallId],[MovieId],[StartTime]) VALUES (4,4,'16:30
 INSERT INTO [dbo].[Schedules]([HallId],[MovieId],[StartTime]) VALUES (4,4,'19:00:00.0000000')
 INSERT INTO [dbo].[Schedules]([HallId],[MovieId],[StartTime]) VALUES (4,4,'21:30:00.0000000')
 go
+
+
+INSERT INTO [dbo].[Orders]([CustomerId] ,[ScheduleId],[TicketIdentifier],[OrderTotal],[OrderDateTime] ) 
+VALUES (1, 2,N'Txsoijdsjoij', 1000,'2018-10-08 12:35:29. 1234567')
+INSERT INTO [dbo].[Orders]([CustomerId] ,[ScheduleId],[TicketIdentifier],[OrderTotal],[OrderDateTime] ) 
+VALUES (2, 4,N'Txssijdsjoig', 250,'2018-12-01 16:35:29. 1234567')
+INSERT INTO [dbo].[Orders]([CustomerId] ,[ScheduleId],[TicketIdentifier],[OrderTotal],[OrderDateTime] ) 
+VALUES (2, 3,N'Txssijcvtyoa', 333,'2018-11-15 19:00:00. 1234567')
+INSERT INTO [dbo].[Orders]([CustomerId] ,[ScheduleId],[TicketIdentifier],[OrderTotal],[OrderDateTime] ) 
+VALUES (3, 8,N'Txssijdsfdwe', 44,'2018-11-15 19:00:00. 1234567')
+go
+
+DELETE FROM [dbo].[SeatsOrders]
+DBCC CHECKIDENT (SeatsOrders, RESEED, 1)
+go
+
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,1,1)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,2,1)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,3,1)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,4,1)
+
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (2,1,1)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (2,2,1)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (2,3,1)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (2,4,1)
+
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,1,2)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,2,2)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (3,1,2)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (3,2,2)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,1,3)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,2,3)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,3,4)
+INSERT INTO [dbo].[SeatsOrders]([Row],[Column],[OrderId] ) 
+VALUES (1,4,4)
+go

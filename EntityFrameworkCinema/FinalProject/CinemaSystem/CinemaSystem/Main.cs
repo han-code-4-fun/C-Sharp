@@ -18,6 +18,9 @@ namespace CinemaSystem
         public Main()
         {
             InitializeComponent();
+            buttonReport.Visible = false;
+            buttonBackup.Visible = false;
+
 
             // Init Entity Framework
             context = new CinemaEntities();
@@ -26,6 +29,8 @@ namespace CinemaSystem
             buttonTicket.Click += TicketForm_Init;
             buttonRegistration.Click += RegistrationForm_Init;
             buttonAddMovie.Click += AddMovieForm_Init;
+            buttonReport.Click += OpenReportForm;
+            buttonSwitch.Click += EnterAdmin;
 
         }
 
@@ -50,6 +55,18 @@ namespace CinemaSystem
         {
             AddMovie registrationForm = new AddMovie(context);
             registrationForm.Show();
+        }
+
+        private void OpenReportForm(object sender, EventArgs e)
+        {
+            Report myReport = new Report(context);
+            myReport.Show();
+        }
+
+        private void EnterAdmin(object sender, EventArgs e)
+        {
+            AdminPasswd myPasswd = new AdminPasswd(buttonReport, buttonBackup);
+            myPasswd.Show();
         }
         
         
