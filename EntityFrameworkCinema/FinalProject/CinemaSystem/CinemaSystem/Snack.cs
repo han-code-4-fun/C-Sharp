@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CinemaSystem.EF_Class;
 
 namespace CinemaSystem
 {
     public partial class Snack : Form
     {
-        public Snack()
+        CinemaEntities context;
+
+        public Snack(CinemaEntities cinemaContext)
         {
+            this.context = cinemaContext;
             InitializeComponent();
         }
     }
