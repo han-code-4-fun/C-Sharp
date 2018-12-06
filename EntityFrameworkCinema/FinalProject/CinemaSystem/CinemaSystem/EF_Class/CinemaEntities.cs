@@ -8,11 +8,12 @@ namespace CinemaSystem.EF_Class
     public partial class CinemaEntities : DbContext
     {
         public CinemaEntities()
-            : base("name=CinemaConnection")
+            : base("name=CinemaEntities1")
         {
         }
 
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
+        public virtual DbSet<BookedSeat> BookedSeats { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Hall> Halls { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
@@ -55,6 +56,10 @@ namespace CinemaSystem.EF_Class
 
             modelBuilder.Entity<Movie>()
                 .Property(e => e.Description)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Movie>()
+                .Property(e => e.Director)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Movie>()

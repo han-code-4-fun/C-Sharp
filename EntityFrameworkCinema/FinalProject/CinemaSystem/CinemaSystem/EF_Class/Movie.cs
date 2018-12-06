@@ -23,6 +23,9 @@ namespace CinemaSystem.EF_Class
         [Required]
         public string Description { get; set; }
 
+        [Required]
+        public string Director { get; set; }
+
         public int Duration_Minutes { get; set; }
 
         [Column(TypeName = "money")]

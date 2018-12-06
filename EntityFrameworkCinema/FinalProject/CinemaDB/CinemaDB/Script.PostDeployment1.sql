@@ -9,28 +9,10 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-DELETE from dbo.[Orders]
-DBCC CHECKIDENT (Orders, RESEED, 1)
-go
+
 
 DELETE FROM [dbo].[Customers]
 DBCC CHECKIDENT (Customers, RESEED, 1)
-go
-
-DELETE FROM [dbo].[Movies]
-DBCC CHECKIDENT (Movies, RESEED, 1)
-go
-
-DELETE FROM [dbo].[Halls]
-DBCC CHECKIDENT (Halls, RESEED, 1)
-go
-
-DELETE FROM [dbo].[Snacks]
-DBCC CHECKIDENT (Snacks, RESEED, 1)
-go
-
-DELETE FROM [dbo].[Schedules]
-DBCC CHECKIDENT (Schedules, RESEED, 1)
 go
 
 INSERT INTO [dbo].[Customers]([FirstName], [LastName], [Phone],[Email]) VALUES (N'N/A',N'N/A',N'N/A',N'N/A')
@@ -40,6 +22,11 @@ INSERT INTO [dbo].[Customers]([FirstName], [LastName], [Phone],[Email]) VALUES (
 INSERT INTO [dbo].[Customers]([FirstName], [LastName], [Email], [Phone]) VALUES (N'Mai', N'Hoang', N'mrhoangmai93@gmail.com', N'6043964139')
 go
 
+DELETE FROM [dbo].[Halls]
+DBCC CHECKIDENT (Halls, RESEED, 1)
+go
+
+
 SET IDENTITY_INSERT [dbo].[Halls] ON
 INSERT INTO [dbo].[Halls] ([HallId], [HallName], [NMaxColum], [NMaxRow]) VALUES (1, N'Hall 1', 4, 4)
 INSERT INTO [dbo].[Halls] ([HallId], [HallName], [NMaxColum], [NMaxRow]) VALUES (2, N'Hall 2', 4, 4)
@@ -48,14 +35,25 @@ INSERT INTO [dbo].[Halls] ([HallId], [HallName], [NMaxColum], [NMaxRow]) VALUES 
 SET IDENTITY_INSERT [dbo].[Halls] OFF
 go
 
-INSERT INTO [dbo].[Movies] ([Name], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Mission Impossible 6',
-N'Another Tom Cruise action movie',120,40)
-INSERT INTO [dbo].[Movies] ([Name], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Thor',
-N'Marvel studio proudly present',140,43)
-INSERT INTO [dbo].[Movies] ([Name], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Kill Bill',
-N'Famour action movie',114,39)
-INSERT INTO [dbo].[Movies] ([Name], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Venom',
-N'Venom from Marvel Universe',150,49)
+
+DELETE FROM [dbo].[Movies]
+DBCC CHECKIDENT (Movies, RESEED, 1)
+go
+
+INSERT INTO [dbo].[Movies] ([Name],[Director], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Mission Impossible 6',
+N'David',N'Another Tom Cruise action movie',120,40)
+INSERT INTO [dbo].[Movies] ([Name], [Director],[Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Thor',
+N'James',N'Marvel studio proudly present',140,43)
+INSERT INTO [dbo].[Movies] ([Name],[Director], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Kill Bill',
+N'Frank',N'Famour action movie',114,39)
+INSERT INTO [dbo].[Movies] ([Name],[Director], [Description], [Duration_Minutes],[InitialPrice]) VALUES (N'Venom',
+N'Eric',N'Venom from Marvel Universe',150,49)
+go
+
+
+
+DELETE FROM [dbo].[Snacks]
+DBCC CHECKIDENT (Snacks, RESEED, 1)
 go
 
 INSERT INTO [dbo].[Snacks]([Name], [Price]) VALUES (N'Pepsi 500ml',2.0)
@@ -66,6 +64,11 @@ INSERT INTO [dbo].[Snacks]([Name], [Price]) VALUES (N'Popcorn medium', 3.5)
 INSERT INTO [dbo].[Snacks]([Name], [Price]) VALUES (N'Popcorn super', 4.5)
 go
 
+
+
+DELETE FROM [dbo].[Schedules]
+DBCC CHECKIDENT (Schedules, RESEED, 1)
+go
 
 INSERT INTO [dbo].[Schedules]([HallId],[MovieId],[StartTime]) VALUES (2,2,'09:00:00.0000000')
 INSERT INTO [dbo].[Schedules]([HallId],[MovieId],[StartTime]) VALUES (2,2,'12:00:00.0000000')
@@ -86,4 +89,8 @@ INSERT INTO [dbo].[Schedules]([HallId],[MovieId],[StartTime]) VALUES (4,4,'14:00
 INSERT INTO [dbo].[Schedules]([HallId],[MovieId],[StartTime]) VALUES (4,4,'16:30:00.0000000')
 INSERT INTO [dbo].[Schedules]([HallId],[MovieId],[StartTime]) VALUES (4,4,'19:00:00.0000000')
 INSERT INTO [dbo].[Schedules]([HallId],[MovieId],[StartTime]) VALUES (4,4,'21:30:00.0000000')
+go
+
+DELETE from dbo.[Orders]
+DBCC CHECKIDENT (Orders, RESEED, 1)
 go

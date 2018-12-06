@@ -30,16 +30,9 @@ namespace CinemaSystem.EF_Class
 
         public string TicketIdentifier { get; set; }
 
-<<<<<<< HEAD:EntityFrameworkCinema/FinalProject/CinemaSystem/CinemaSystem/EF_Class/Order.cs
-=======
-        public int? NumberOfTickets { get; set; }
-
-        public string SeatsBooked { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookedSeat> BookedSeats { get; set; }
 
->>>>>>> 614aecc384936d67d4c4d303036d219fdee8b36e:EntityFrameworkCinema/CinemaSystem/CinemaSystem/EF_Class/Order.cs
         public virtual Customer Customer { get; set; }
 
         public virtual Schedule Schedule { get; set; }

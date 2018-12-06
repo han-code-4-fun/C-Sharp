@@ -26,6 +26,7 @@ namespace CinemaSystem
             buttonTicket.Click += TicketForm_Init;
             buttonRegistration.Click += RegistrationForm_Init;
             buttonAddMovie.Click += AddMovieForm_Init;
+
         }
 
         private void MainForm_load(object sender, EventArgs e)
@@ -36,11 +37,13 @@ namespace CinemaSystem
         private void TicketForm_Init(object sender, EventArgs e)
         {
             Ticket ticketForm = new Ticket(context);
+
             ticketForm.Show();
         }
         private void RegistrationForm_Init(object sender, EventArgs e)
         {
             MemberRegistration registrationForm = new MemberRegistration(context);
+            //registrationForm.button
             registrationForm.Show();
         }
         private void AddMovieForm_Init(object sender, EventArgs e)
@@ -48,5 +51,7 @@ namespace CinemaSystem
             AddMovie registrationForm = new AddMovie(context);
             registrationForm.Show();
         }
+        
+        
     }
 }

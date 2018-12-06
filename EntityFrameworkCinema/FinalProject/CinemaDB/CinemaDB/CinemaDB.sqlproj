@@ -7,7 +7,7 @@
     <Name>CinemaDB</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{772108d7-552f-4752-ae1d-53a91d5bfb6e}</ProjectGuid>
+    <ProjectGuid>{292af5a9-a24c-4649-9116-44fe264a0f4d}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -17,7 +17,7 @@
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
@@ -58,21 +58,10 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD:EntityFrameworkCinema/FinalProject/CinemaDB/CinemaDB/CinemaDB.sqlproj
-    <Build Include="Customers.sql" />
-    <Build Include="Halls.sql" />
-    <Build Include="Movies.sql" />
-    <Build Include="Orders.sql" />
-    <Build Include="OrdersSnacks.sql" />
-    <Build Include="Schedules.sql" />
-    <Build Include="Snacks.sql" />
-    <Build Include="SeatsOrders.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <PostDeploy Include="SeedData.sql" />
-=======
     <Build Include="dbo\Tables\Customers_2.sql" />
     <Build Include="dbo\Tables\Movies_2.sql" />
     <Build Include="dbo\Tables\Orders_2.sql" />
@@ -81,12 +70,12 @@
     <Build Include="dbo\Tables\Snacks_2.sql" />
     <Build Include="dbo\Tables\Hall.sql" />
     <Build Include="dbo\Tables\BookedSeats.sql" />
->>>>>>> 614aecc384936d67d4c4d303036d219fdee8b36e:EntityFrameworkCinema/CinemaDB/CinemaDB/CinemaDB.sqlproj
+    <Build Include="dbo\Tables\SeatsOrders.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="CinemaDB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="dbo\seed.sql" />
+    <PostDeploy Include="Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

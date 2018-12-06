@@ -1,17 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
-  <Operation Name="Rename Refactor" Key="3da8c71f-b612-4ebd-9b9e-187125340e27" ChangeDateTime="12/04/2018 05:49:06">
-    <Property Name="ElementName" Value="[dbo].[Halls].[Hall]" />
+  <Operation Name="Rename Refactor" Key="821235f1-d9af-4b3f-95ea-22c8779a5203" ChangeDateTime="11/29/2018 20:20:18">
+    <Property Name="ElementName" Value="[dbo].[Movies].[Duration]" />
     <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[Halls]" />
+    <Property Name="ParentElementName" Value="[dbo].[Movies]" />
     <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="HallName" />
+    <Property Name="NewName" Value="Duration_Minutes" />
   </Operation>
-  <Operation Name="Rename Refactor" Key="950aa8c2-8d73-4b36-98bc-ce192d61a180" ChangeDateTime="12/04/2018 05:59:09">
-    <Property Name="ElementName" Value="[dbo].[Halls].[NMaxRows]" />
+  <Operation Name="Rename Refactor" Key="e7af59e9-24ac-4816-9f07-5dc67efe224c" ChangeDateTime="11/29/2018 20:21:09">
+    <Property Name="ElementName" Value="[dbo].[Seats].[Id]" />
     <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[Halls]" />
+    <Property Name="ParentElementName" Value="[dbo].[Seats]" />
     <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="NMaxRow" />
+    <Property Name="NewName" Value="01" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f711bc67-8ecb-407a-80db-b3b293c8a7ca" ChangeDateTime="11/29/2018 21:30:23">
+    <Property Name="ElementName" Value="[dbo].[OrdersSnacks].[TotalPrice]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[OrdersSnacks]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UnitPrice" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ec1d1485-a4a3-49b9-b14f-551ae4e4b466" ChangeDateTime="11/29/2018 21:31:38">
+    <Property Name="ElementName" Value="[dbo].[Schedules].[NumberOfSeats]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Schedules]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NumberOfSeatsSold" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="890202c2-f3c8-43cc-86ad-3e93a379b484" ChangeDateTime="11/29/2018 22:29:59">
+    <Property Name="ElementName" Value="[dbo].[Orders].[OrderDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Orders]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OrderDateTime" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e39af972-747b-4e4c-9ceb-6c6c95e4f8bd" ChangeDateTime="11/30/2018 00:25:05">
+    <Property Name="ElementName" Value="[dbo].[BookedSeats].[ScheduleID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BookedSeats]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OrderID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e886af48-e44d-43a8-88f4-b12792696043" ChangeDateTime="11/30/2018 00:25:42">
+    <Property Name="ElementName" Value="[dbo].[BookedSeats].[seatsRow]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BookedSeats]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SeatRow" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cbd09869-6276-411d-ba7b-6414362ddd0f" ChangeDateTime="11/30/2018 00:25:56">
+    <Property Name="ElementName" Value="[dbo].[BookedSeats].[SeatColume]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BookedSeats]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SeatColumn" />
   </Operation>
 </Operations>
