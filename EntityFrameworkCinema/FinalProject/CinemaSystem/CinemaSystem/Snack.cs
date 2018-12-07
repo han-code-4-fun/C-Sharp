@@ -26,23 +26,24 @@ namespace CinemaSystem
             this.buttonDecrease.Click += SnackDecrease_Click;
             this.textBoxQuantity.TextChanged += SnackQuantityChange_Click;
             this.buttonProcess.Click += ConfirmSnack_Click;
-            dataListViewSnackList.SelectionChanged += SnackChange_Click;
+            dataGridView1.SelectionChanged += SnackChange_Click;
         }
         private void SnackForm_Load(object sender, EventArgs e)
         {
-            dataListViewSnackList.DataSource = context.Snacks.ToList();
-            dataListViewSnackList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataListViewSnackList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataListViewSnackList.Columns["SnackId"].Visible = false;
-            dataListViewSnackList.Columns["Price"].DefaultCellStyle.Format = "c";
-            dataListViewSnackList.Columns["OrdersSnacks"].Visible = false;
+            dataGridView1.DataSource = context.Snacks.ToList();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Columns["SnackId"].Visible = false;
+            dataGridView1.Columns["Price"].DefaultCellStyle.Format = "c";
+            dataGridView1.Columns["OrdersSnacks"].Visible = false;
         }
         private void SnackChange_Click(object sender, EventArgs e)
         {
-            if (dataListViewSnackList.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
+                //dataListViewSnackList
                 // Get current selected row
-                DataGridViewRow selectedRow = dataListViewSnackList.SelectedRows[0];
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                 int snackId = Convert.ToInt32(selectedRow.Cells["SnackId"].Value);
                 // Find the selected Snack
                 selectedSnack = context.Snacks.Find(snackId);

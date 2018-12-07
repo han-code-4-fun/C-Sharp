@@ -52,20 +52,20 @@
             // 
             // dataGridView1
             // 
-            this.dataListViewSnackList.AllowUserToAddRows = false;
-            this.dataListViewSnackList.AllowUserToDeleteRows = false;
-            this.dataListViewSnackList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListViewSnackList.Location = new System.Drawing.Point(50, 91);
-            this.dataListViewSnackList.Margin = new System.Windows.Forms.Padding(1);
-            this.dataListViewSnackList.Name = "dataListViewSnackList";
-            this.dataListViewSnackList.ReadOnly = true;
-            this.dataListViewSnackList.RowTemplate.Height = 46;
-            this.dataListViewSnackList.Size = new System.Drawing.Size(402, 183);
-            this.dataListViewSnackList.TabIndex = 3;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(157, 159);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(1);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 46;
+            this.dataGridView1.Size = new System.Drawing.Size(1293, 624);
+            this.dataGridView1.TabIndex = 3;
             // 
             // textBoxSnackPrice
             // 
-            this.textBoxSnackPrice.Location = new System.Drawing.Point(361, 322);
+            this.textBoxSnackPrice.Location = new System.Drawing.Point(1144, 937);
             this.textBoxSnackPrice.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxSnackPrice.Name = "textBoxSnackPrice";
             this.textBoxSnackPrice.ReadOnly = true;
@@ -94,38 +94,38 @@
             // textBoxQuantity
             // 
             this.textBoxQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuantity.Location = new System.Drawing.Point(173, 303);
+            this.textBoxQuantity.Location = new System.Drawing.Point(455, 870);
             this.textBoxQuantity.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxQuantity.Name = "textBoxQuantity";
             this.textBoxQuantity.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBoxQuantity.Size = new System.Drawing.Size(53, 32);
+            this.textBoxQuantity.Size = new System.Drawing.Size(53, 80);
             this.textBoxQuantity.TabIndex = 25;
             this.textBoxQuantity.Text = "0";
             this.textBoxQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonDecrease
             // 
-            this.buttonDecrease.Location = new System.Drawing.Point(237, 303);
+            this.buttonDecrease.Location = new System.Drawing.Point(519, 870);
             this.buttonDecrease.Margin = new System.Windows.Forms.Padding(1);
             this.buttonDecrease.Name = "buttonDecrease";
-            this.buttonDecrease.Size = new System.Drawing.Size(33, 28);
+            this.buttonDecrease.Size = new System.Drawing.Size(78, 84);
             this.buttonDecrease.TabIndex = 24;
             this.buttonDecrease.Text = "-";
             this.buttonDecrease.UseVisualStyleBackColor = true;
             // 
             // buttonIncrease
             // 
-            this.buttonIncrease.Location = new System.Drawing.Point(128, 303);
+            this.buttonIncrease.Location = new System.Drawing.Point(369, 870);
             this.buttonIncrease.Margin = new System.Windows.Forms.Padding(1);
             this.buttonIncrease.Name = "buttonIncrease";
-            this.buttonIncrease.Size = new System.Drawing.Size(33, 28);
+            this.buttonIncrease.Size = new System.Drawing.Size(74, 80);
             this.buttonIncrease.TabIndex = 23;
             this.buttonIncrease.Text = "+";
             this.buttonIncrease.UseVisualStyleBackColor = true;
             // 
             // buttonProcess
             // 
-            this.buttonProcess.Location = new System.Drawing.Point(198, 391);
+            this.buttonProcess.Location = new System.Drawing.Point(567, 1138);
             this.buttonProcess.Margin = new System.Windows.Forms.Padding(1);
             this.buttonProcess.Name = "buttonProcess";
             this.buttonProcess.Size = new System.Drawing.Size(365, 80);
