@@ -14,6 +14,11 @@
 
 The system’s users are the cinema cashier staff. And assuming that the schedule of movies each period is designed and delivered by the cinema manager. So an existing schedule table is provided. The report and back up function can only be used by administrator. Administrator users need to enter password before accessing it.<br /><br /><br />
 
+### Database Design
+![alt text](https://github.com/miaonagemide/C-Sharp/blob/master/Cinema/CinemaDB/DB.jpg)
+<br /><br /><br />
+
+
 ### Process Model
 
 _For ticket purchasing_
