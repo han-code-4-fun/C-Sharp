@@ -1,5 +1,12 @@
 # Project use Entity Framework to build cinema system with designed SQL Database
 
+## Content
+- Description
+- Database Design (Diagram)
+- Process Model
+- How to run the program
+
+
 ### Description
 
 ##### This is a project for a cinema business. The goal is to deliver a Purchase system implements multiple forms and underlying tables that cover the function of:
