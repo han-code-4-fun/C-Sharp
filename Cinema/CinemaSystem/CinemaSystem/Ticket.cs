@@ -259,6 +259,10 @@ namespace CinemaSystem
             }
             textBoxSnackPrice.Text = totalSnackPrice.ToString("c");
             totalPrice = totalSnackPrice + totalMoviePrice;
+            if(!textBoxFirstName.Text.Equals("") && !textBoxLastName.Text.Equals(""))
+            {
+                totalPrice = decimal.Multiply(totalPrice, 0.95m);
+            }
             textBoxTotalPrice.Text = totalPrice.ToString("c");
         }
 
