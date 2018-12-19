@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMovie xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Movie>
+    <MovieId>1</MovieId>
+    <Name>Mission Impossible 6</Name>
+    <Description>Another Tom Cruise action movie</Description>
+    <Director>David</Director>
+    <Duration_Minutes>120</Duration_Minutes>
+    <InitialPrice>40.0000</InitialPrice>
+  </Movie>
+  <Movie>
+    <MovieId>2</MovieId>
+    <Name>Thor</Name>
+    <Description>Marvel studio proudly present</Description>
+    <Director>James</Director>
+    <Duration_Minutes>140</Duration_Minutes>
+    <InitialPrice>43.0000</InitialPrice>
+  </Movie>
+  <Movie>
+    <MovieId>3</MovieId>
+    <Name>Kill Bill</Name>
+    <Description>Famour action movie</Description>
+    <Director>Frank</Director>
+    <Duration_Minutes>114</Duration_Minutes>
+    <InitialPrice>39.0000</InitialPrice>
+  </Movie>
+  <Movie>
+    <MovieId>4</MovieId>
+    <Name>Venom</Name>
+    <Description>Venom from Marvel Universe</Description>
+    <Director>Eric</Director>
+    <Duration_Minutes>150</Duration_Minutes>
+    <InitialPrice>49.0000</InitialPrice>
+  </Movie>
+  <Movie>
+    <MovieId>5</MovieId>
+    <Name>h</Name>
+    <Description>n</Description>
+    <Director>9</Director>
+    <Duration_Minutes>234</Duration_Minutes>
+    <InitialPrice>234.0000</InitialPrice>
+  </Movie>
+</ArrayOfMovie>

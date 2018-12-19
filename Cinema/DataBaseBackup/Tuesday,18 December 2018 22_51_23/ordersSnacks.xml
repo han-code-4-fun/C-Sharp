@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOrdersSnack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OrdersSnack>
+    <Id>1</Id>
+    <OrderId>5</OrderId>
+    <SnackId>1</SnackId>
+    <Quantity>1</Quantity>
+    <UnitPrice>2.0000</UnitPrice>
+    <OrderTotal>2.0000</OrderTotal>
+  </OrdersSnack>
+</ArrayOfOrdersSnack>
